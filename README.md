@@ -20,7 +20,8 @@ Functions are the building block of programs. They are the conceptual unit that 
 - identify the differences between defining a function and calling (invoking) a function (casting the spell).
 - create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
 - draw a model of a function that includes arguments as input, side effects, and return values as output.
-- explain the keyword `this` in the context of different scopes.
+- identify the scope of any given variable.
+- associate the keyword `this` with the concept of an "execution context."
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -364,12 +365,12 @@ console.log(mult);
 
 >Every function invocation has both a scope and a context associated with it. Fundamentally, scope is function-based while context is object-based. In other words, scope pertains to the variable access of a function when it is invoked and is unique to each invocation. Context is always the value of the `this` keyword which is a reference to the object that “owns” the currently executing code.
 
-In most of the functions we'll be writing early on, the object that "owns" the currently executing code will be the `Window` object.
+In most of the functions we'll be writing early on, the object that "owns" the currently executing code will be the `Window` object. The `Window` object is the **execution context** for much of the code that we'll be writing. That is, it's the setting in which the code is run.
 
 ![image](https://cloud.githubusercontent.com/assets/6520345/17747683/bd2a0264-646a-11e6-9d73-846f68642379.png)
 
 
-Later on, we'll learn how to build our own objects that contain their own functions called *methods*. In those cases, `this` will refer to the object that "owns" those functions.
+Later on, we'll learn how to build our own objects that contain their own functions called *methods*. In those cases, `this` will refer to the object that "owns" those functions. Those objects will become the **contexts** in which our code is running.
 
 ```javascript
 // below, this refers to the shape object so you can access its properties
@@ -383,9 +384,10 @@ var shape = {
 
 ```
 
+Above, `this` refers to the object shape.
 
 ## Independent Practice
-Refine the skills covered in this workshop with some [Function Training](https://github.com/sf-wdi-31/functions-training)
+Refine the skills covered in this workshop with some [Function Training](https://github.com/sf-wdi-34/functions-training)
 
 ## Closing Thoughts
 - You should now know the difference between defining and calling a function, you should be able to write functions that return values.
